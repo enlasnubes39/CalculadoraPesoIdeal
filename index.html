@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de Peso Ideal - PWA moderna">
+    <title>Calculadora de Peso Ideal</title>
+    
+    <!-- Enlaces PWA -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+    <link rel="apple-touch-icon" href="./icon-192x192.png">
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main class="glass-container">
+        <header>
+            <h1>Calculadora de Peso Ideal</h1>
+            <p>Descubre tu peso saludable estimado</p>
+        </header>
+
+        <section class="calculator-form">
+            <div class="input-group">
+                <label for="gender">Género</label>
+                <div class="toggle-container">
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male" class="toggle-btn">Hombre</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female" class="toggle-btn">Mujer</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="height">Altura (cm)</label>
+                <input type="number" id="height" min="100" max="250" placeholder="Ej: 175" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="age">Edad (años)</label>
+                <input type="number" id="age" min="18" max="120" placeholder="Ej: 30">
+            </div>
+
+            <button id="calculate-btn" class="primary-btn">Calcular</button>
+        </section>
+
+        <section id="result-section" class="result-section hidden">
+            <h2>Tu Peso Ideal:</h2>
+            <div class="result-display">
+                <span id="ideal-weight">--</span> <span class="unit">kg</span>
+            </div>
+            <p class="disclaimer">*Este es un valor estimado basado en fórmulas generales (Fórmula de Robinson). Consulta a un profesional de la salud para una evaluación precisa.</p>
+        </section>
+    </main>
+
+    <!-- Script de lógica -->
+    <script src="./app.js"></script>
+</body>
+</html>
